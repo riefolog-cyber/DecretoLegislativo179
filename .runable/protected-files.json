@@ -13,6 +13,5 @@
   "packages/web/src/web/__vite-env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
   "packages/web/src/web/types/__analytics.d.ts": "930e9287188df1247ee34d6cac333d586df7f1dad45c5e408c80c663fb38a701",
   "packages/web/vite/__plugins/asset-optimizer-plugin.ts": "e25227e204ad4ec19cff6d581218990d19f2cda44c5193a163c04f641baf7aae",
-  "packages/web/vite/__plugins/hono-dev-plugin.ts": "e29bea99d400959c8ffb485b3c25d8ceff997243f8a19278c2e2032db6a014a7",
-  "packages/web/vite/__plugins/runable-analytics-plugin.ts": "b06e777c76bb22af103db770f29c2f9ae992eb7a28ff8e42845c7b0356d6cb93"
+  "packages/web/vite/__plugins/hono-dev-plugin.ts": "e29bea99d400959c8ffb485b3c25d8ceff997243f8a19278c2e2032db6a014a7"
 }

@@ -1,19 +1,42 @@
-# App template
+# Atlante — IA a scuola
 
-Runable copies this Bun and Turborepo project into each new sandbox.
+Pagina editoriale a confronto tra Italia, media europea e Australia sul ruolo dell'intelligenza
+artificiale nella scuola secondaria di secondo grado, con il quadro normativo del
+D.Lgs. 179/2026 (artt. 36–38).
 
-The root package commands are the external contract:
+**Realizzato da Prof. Giovanni Riefolo** — Referente per l'innovazione digitale,
+IIS Ferraris Fermi Verona.
 
-- `bun run dev` starts the web app.
-- `bun run dev:desktop` and `bun run dev:mobile` start platform clients.
-- `bun run build` builds every package.
-- `bun run start` starts or restarts the production server.
-- `bun run stop` stops the production server.
-- `bun run lint` and `bun run typecheck` validate the project.
-- The `db:generate`, `db:migrate`, and `db:push` commands manage the database.
+## Link pubblici
 
-Deployment tools depend on these command names. Their implementations may change, but the names must remain stable.
+- Sito: <https://riefolog-cyber.github.io/DecretoLegislativo179/>
+- Codice sorgente: <https://github.com/riefolog-cyber/DecretoLegislativo179>
 
-The web package owns the API, database, and shared web interface. The mobile package is an Expo client. The desktop package is an Electron shell around the web app. Services use the fixed ports defined in `__ports.cjs`, and the web health endpoint is `/api/health`.
+Il sito viene pubblicato automaticamente da GitHub Actions: ogni push su `main` ricostruisce
+`packages/web` e lo deploya su GitHub Pages.
 
-Secrets belong in the root `.env` file. Browser values must use the `VITE_` prefix. Commands prefixed with `internal:` are for template maintenance.
+## Struttura
+
+Progetto Bun + Turborepo. Il pacchetto `packages/web` contiene API, database e interfaccia web;
+`packages/mobile` è un client Expo; `packages/desktop` è una shell Electron attorno all'app web.
+I servizi usano le porte fisse definite in `__ports.cjs` e l'endpoint di health check è `/api/health`.
+
+Le segreti stanno nel file `.env` alla root. I valori letti dal browser devono usare il prefisso `VITE_`.
+
+## Comandi
+
+- `bun run dev` avvia l'app web
+- `bun run dev:desktop` e `bun run dev:mobile` avviano i client di piattaforma
+- `bun run build` compila ogni pacchetto
+- `bun run start` avvia o riavvia il server di produzione
+- `bun run stop` ferma il server di produzione
+- `bun run lint` e `bun run typecheck` validano il progetto
+- I comandi `db:generate`, `db:migrate` e `db:push` gestiscono il database
+
+I comandi con prefisso `internal:` servono alla manutenzione del template.
+
+## Deploy
+
+Il build statico si genera con `bun run build:web` e finisce in `packages/web/dist`.
+Per GitHub Pages la variabile `VITE_BASE_PATH` imposta il percorso pubblico
+(ad esempio `/DecretoLegislativo179/`): il router (`wouter`) si adatta automaticamente al base path.
