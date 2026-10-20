@@ -1,3 +1,3 @@
-// Runable assigns these ports when it creates the app and derives every preview URL from them, so
-// they are fixed for the app's lifetime — changing one orphans the URL the user already has.
-module.exports = require("./.runable/ports.json");
+// Fixed service ports for this app: the web app, the mobile client and the desktop shell.
+// Every consumer reads this file, so the three ports can never drift apart.
+module.exports = require("./ports.json");
